@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.15;
+pragma solidity >=0.4.22 <0.9.0;
 
 
 contract TaskContract {
@@ -17,7 +17,7 @@ contract TaskContract {
 
  mapping (uint256 => address) taskToOwner;
 
- function addTask (string memory taskText, bool isDeleted) external {
+ function addTask (string calldata taskText, bool isDeleted) external {
   uint taskId = tasks.length;
   tasks.push(Task(id, taskText, isDeleted));
   taskToOwner[taskId] = msg.sender;
