@@ -27,4 +27,10 @@ contract mapping_example {
         student.marks = 88;
         student_result.push(0xDEE7796E89C82C36BAdd1375076f39D69FafE252) - 1;
     }
+
+    // Function to retrieve
+    // values from a mapping
+    function get_student_result() public view returns (address[]) {
+        return student_result;
+    }
 }
